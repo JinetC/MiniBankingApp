@@ -1,5 +1,5 @@
 # MiniBankingApp
-Servlet Project
+### Servlet Project
 
 # Overview
 
@@ -61,3 +61,65 @@ powerful backend database structure. It is a practical demonstration of software
 development principles including client-server interaction, persistent storage, and
 secure session management, which are vital in financial software development.
 
+# MiniBanking System - User Guide & Deployment Instructions
+
+User Guide for MiniBanking System
+
+### 1. Overview
+MiniBanking is a web-based application that allows users to manage customers, savings accounts, and
+transactions including deposits, withdrawals, and viewing transaction history.
+### 2. Features
+- Add, view, edit, and delete customers.
+- Open and view savings accounts.
+- Deposit and withdraw money for customers.
+- View transaction history by customer and date range.
+- User login/logout for access control.
+### 3. Accessing the Application
+- Open your browser and go to:
+http://localhost:8085/MiniBanking/login
+- Login using your credentials.
+### 4. Customer Management
+- Add Customer: Fill in personal and account details and submit.
+- View Customers: Lists all customers.
+- Edit Customer: Enter customer ID, edit details, and submit.
+- Delete Customer: Enter customer ID and confirm deletion.
+### 5. Account Management
+- Open Savings Account: Select existing customer, provide initial deposit and date.
+- View Savings Accounts: List all savings accounts.
+- Deposit Money: Select customer account, enter deposit amount and date.
+- Withdraw Money: Select customer account, enter withdrawal amount and date (checks balance).
+- View Transaction History: Enter customer ID and date range to see transactions.
+MiniBanking System - User Guide & Deployment Instructions
+### 6. Logout
+- Use the Logout button to end your session securely.
+
+## Deployment Instructions for MiniBanking System
+### 1. Prerequisites
+- Java Development Kit (JDK 8 or above)
+- Apache Tomcat Server (version 9 or above)
+- MySQL Server
+- Maven (for building the project)
+### 2. Database Setup
+- Create a MySQL database named 'online_banking'.
+- Import the provided SQL script (online_banking_backup.sql) into MySQL to create tables and sample data:
+mysql -u root -p online_banking < online_banking_backup.sql
+- Ensure MySQL username/password in DatabaseConnection.java matches your setup (root / 1234).
+### 3. Build Project
+- Navigate to the project directory in your terminal.
+- Run:
+mvn clean package
+- This will generate a WAR file MiniBanking.war inside the target folder.
+### 4. Deploy WAR to Tomcat
+- Copy MiniBanking.war to Tomcat's webapps folder.
+- Start Tomcat server:
+MiniBanking System - User Guide & Deployment Instructions
+cd /path/to/tomcat/bin
+./startup.sh # or startup.bat on Windows
+- Tomcat will auto-deploy the WAR.
+### 5. Access Application
+- Open browser and go to:
+http://localhost:8085/MiniBanking/login
+- Login and start using the system.
+### 6. Stopping Tomcat
+- To stop the server:
+./shutdown.sh # or shutdown.bat on Windows
